@@ -5,6 +5,7 @@
 [![GitHub Super-Linter](https://github.com/Zheng-Bote/gh_action_hello-world/actions/workflows/linter.yml/badge.svg)](https://github.com/super-linter/super-linter)
 [![CodeQL](https://github.com/Zheng-Bote/gh_action_hello-world/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/Zheng-Bote/gh_action_hello-world/actions/workflows/codeql-analysis.yml)
 ![CI](https://github.com/Zheng-Bote/gh_action_hello-world/actions/workflows/ci.yml/badge.svg)
+[![test the action](https://github.com/Zheng-Bote/gh_action_hello-world/actions/workflows/test_action.yml/badge.svg)](https://github.com/Zheng-Bote/gh_action_hello-world/actions/workflows/test_action.yml)
 [![pages-build-deployment](https://github.com/Zheng-Bote/gh_action_hello-world/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/Zheng-Bote/gh_action_hello-world/actions/workflows/pages/pages-build-deployment)
 
 Use this template to bootstrap the creation of a JavaScript action. :rocket:
