@@ -1,7 +1,11 @@
 # Create a JavaScript Action
 
+[![Dependabot Updates](https://github.com/Zheng-Bote/gh_action_hello-world/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/Zheng-Bote/gh_action_hello-world/actions/workflows/dependabot/dependabot-updates)
+[![Check Transpiled JavaScript](https://github.com/Zheng-Bote/gh_action_hello-world/actions/workflows/check-dist.yml/badge.svg)](https://github.com/Zheng-Bote/gh_action_hello-world/actions/workflows/check-dist.yml)
 [![GitHub Super-Linter](https://github.com/Zheng-Bote/gh_action_hello-world/actions/workflows/linter.yml/badge.svg)](https://github.com/super-linter/super-linter)
+[![CodeQL](https://github.com/Zheng-Bote/gh_action_hello-world/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/Zheng-Bote/gh_action_hello-world/actions/workflows/codeql-analysis.yml)
 ![CI](https://github.com/Zheng-Bote/gh_action_hello-world/actions/workflows/ci.yml/badge.svg)
+[![pages-build-deployment](https://github.com/Zheng-Bote/gh_action_hello-world/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/Zheng-Bote/gh_action_hello-world/actions/workflows/pages/pages-build-deployment)
 
 Use this template to bootstrap the creation of a JavaScript action. :rocket:
 
