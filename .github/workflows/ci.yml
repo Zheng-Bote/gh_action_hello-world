@@ -55,7 +55,7 @@ jobs:
 
       - name: Test Action
         id: test-action
-        uses: Zheng-Bote/gh_action_hello-world@v1 
+        uses: Zheng-Bote/gh_action_hello-world@v1
         with:
           milliseconds: 1000
 
