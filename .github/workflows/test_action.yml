@@ -21,7 +21,7 @@ jobs:
 
       - name: Run my Action
         id: run-action
-        uses: /@v1     # Commit with the `v1` tag
+        uses: Zheng-Bote/gh_action_hello-world@v1     # Commit with the `v1` tag
         with:
           milliseconds: 1000
 
