@@ -55,7 +55,7 @@ jobs:
 
       - name: Test Local Action
         id: test-action
-        uses: ./@v1
+        uses: ./gh_action_hello-world@v1
         with:
           milliseconds: 1000
 
