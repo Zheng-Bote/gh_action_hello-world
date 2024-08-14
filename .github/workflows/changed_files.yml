@@ -19,7 +19,7 @@ jobs:
         uses: tj-actions/changed-files@v44
         with:
           files: docs/**
-          files_ignore: docs/static.js
+          files_ignore: docs/static.md
 
       - name: Run step if any file(s) in the docs folder change
         if: steps.changed-files-specific.outputs.any_changed == 'true'
@@ -29,3 +29,17 @@ jobs:
           echo "One or more files in the docs folder has changed."
           echo "List all the files that have changed: $ALL_CHANGED_FILES"
           
+      - name: append file
+        uses: "DamianReeves/write-file-action@master"
+        with:
+          path: docs/static.md
+          write-mode: append
+          contents: $ALL_CHANGED_FILES
+            
+      - name: Commit & Push
+        uses: Andro999b/push@v1.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          force: true
+          message: 'appended by Github Actions - ${date}'
