@@ -32,6 +32,7 @@ jobs:
           files_ignore: docs/static.md
 
       - name: Run step if any file(s) in the docs folder change
+        id: changed-files
         if: steps.changed-files-specific.outputs.any_changed == 'true'
         env:
           ALL_CHANGED_FILES: ${{ steps.changed-files-specific.outputs.all_changed_files }}
@@ -44,7 +45,8 @@ jobs:
         with:
           path: docs/static.md
           write-mode: append
-          contents: $ALL_CHANGED_FILES
+          contents: |
+            $ALL_CHANGED_FILES
             
       - name: Commit & Push
         uses: Andro999b/push@v1.3
