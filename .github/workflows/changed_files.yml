@@ -41,12 +41,13 @@ jobs:
           echo "List all the files that have changed: ${{ env.ALL_CHANGED_FILES }}"
           
       - name: append file
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
         uses: "DamianReeves/write-file-action@master"
         with:
           path: docs/static.md
           write-mode: append
           contents: |
-            $ALL_CHANGED_FILES
+            ${{ env.ALL_CHANGED_FILES }}
             
       - name: Commit & Push
         uses: Andro999b/push@v1.3
