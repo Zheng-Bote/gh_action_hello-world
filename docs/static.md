@@ -1,1 +1,2 @@
-$ALL_CHANGED_FILES$ALL_CHANGED_FILES$ALL_CHANGED_FILESdocs/test.htmldocs/index.html
+docs/test.html
+docs/index.html
