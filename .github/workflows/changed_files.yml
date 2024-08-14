@@ -37,7 +37,7 @@ jobs:
           ALL_CHANGED_FILES: ${{ steps.changed-files-specific.outputs.all_changed_files }}
         run: |
           echo "One or more files in the docs folder has changed."
-          echo "List all the files that have changed: $ALL_CHANGED_FILES"
+          echo "List all the files that have changed: ${{ env.ALL_CHANGED_FILES }}"
           
       - name: append file
         uses: "DamianReeves/write-file-action@master"
