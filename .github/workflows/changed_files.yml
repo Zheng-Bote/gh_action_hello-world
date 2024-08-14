@@ -47,7 +47,7 @@ jobs:
           path: docs/static.md
           write-mode: append
           contents: |
-            ${{ env.ALL_CHANGED_FILES }}
+            ${{ steps.changed-files-specific.outputs.all_changed_files }}
             
       - name: Commit & Push
         uses: Andro999b/push@v1.3
