@@ -4,6 +4,16 @@ on:
   push:
     branches:
       - main
+permissions:
+  actions: read
+  attestations: write
+  checks: read
+  contents: write
+  deployments: write
+  id-token: read
+  pull-requests: write
+  repository-projects: write
+  statuses: write
 
 jobs:
   # ------------------------------------------------------------------------------------------------------------------------------------------------
