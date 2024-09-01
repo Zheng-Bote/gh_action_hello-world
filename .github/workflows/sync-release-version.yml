@@ -1,7 +1,10 @@
 name: Update release version.
 on:
+  workflow_dispatch:
   release:
     types: [published]
+
+permissions: write-all
 
 jobs:
   update-version:
