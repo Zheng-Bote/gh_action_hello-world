@@ -1,6 +1,6 @@
 # playgound
 
-**_this is only a playgroud, will be deleted soon_**
+***this is only a playgroud, will be deleted soon***
 
 # Create a JavaScript Action
 
@@ -25,13 +25,13 @@ If you are new, there's also a simpler introduction in the
 To create your own action, you can use this repository as a template! Just
 follow the below instructions:
 
-1. Click the **Use this template** button at the top of the repository
-1. Select **Create a new repository**
-1. Select an owner and name for your new repository
-1. Click **Create repository**
-1. Clone your new repository
+1.  Click the **Use this template** button at the top of the repository
+2.  Select **Create a new repository**
+3.  Select an owner and name for your new repository
+4.  Click **Create repository**
+5.  Clone your new repository
 
-> [!IMPORTANT]
+> \[!IMPORTANT]
 >
 > Make sure to remove or update the [`CODEOWNERS`](./CODEOWNERS) file! For
 > details on how to use this file, see
@@ -42,7 +42,7 @@ follow the below instructions:
 After you've cloned the repository to your local machine or codespace, you'll
 need to perform some initial setup steps before you can develop your action.
 
-> [!NOTE]
+> \[!NOTE]
 >
 > You'll need to have a reasonably modern version of
 > [Node.js](https://nodejs.org) handy. If you are using a version manager like
@@ -51,30 +51,30 @@ need to perform some initial setup steps before you can develop your action.
 > root of your repository to install the version specified in
 > [`package.json`](./package.json). Otherwise, 20.x or later should work!
 
-1. :hammer_and_wrench: Install the dependencies
+1.  :hammer\_and\_wrench: Install the dependencies
 
-   ```bash
-   npm install
-   ```
+    ```bash
+    npm install
+    ```
 
-1. :building_construction: Package the JavaScript for distribution
+2.  :building\_construction: Package the JavaScript for distribution
 
-   ```bash
-   npm run bundle
-   ```
+    ```bash
+    npm run bundle
+    ```
 
-1. :white_check_mark: Run the tests
+3.  :white\_check\_mark: Run the tests
 
-   ```bash
-   $ npm test
+    ```bash
+    $ npm test
 
-   PASS  ./index.test.js
-     ✓ throws invalid number (3ms)
-     ✓ wait 500 ms (504ms)
-     ✓ test runs (95ms)
+    PASS  ./index.test.js
+      ✓ throws invalid number (3ms)
+      ✓ wait 500 ms (504ms)
+      ✓ test runs (95ms)
 
-   ...
-   ```
+    ...
+    ```
 
 ## Update the Action Metadata
 
@@ -93,65 +93,68 @@ contents of this directory with your own code.
 
 There are a few things to keep in mind when writing your action code:
 
-- Most GitHub Actions toolkit and CI/CD operations are processed asynchronously.
-  In `main.js`, you will see that the action is run in an `async` function.
+*   Most GitHub Actions toolkit and CI/CD operations are processed asynchronously.
+    In `main.js`, you will see that the action is run in an `async` function.
 
-  ```javascript
-  const core = require('@actions/core')
-  //...
+    ```javascript
+    const core = require('@actions/core')
+    //...
 
-  async function run() {
-    try {
-      //...
-    } catch (error) {
-      core.setFailed(error.message)
+    async function run() {
+      try {
+        //...
+      } catch (error) {
+        core.setFailed(error.message)
+      }
     }
-  }
-  ```
+    ```
 
-  For more information about the GitHub Actions toolkit, see the
-  [documentation](https://github.com/actions/toolkit/blob/main/README.md).
+    For more information about the GitHub Actions toolkit, see the
+    [documentation](https://github.com/actions/toolkit/blob/main/README.md).
 
 So, what are you waiting for? Go ahead and start customizing your action!
 
-1. Create a new branch
+1.  Create a new branch
 
-   ```bash
-   git checkout -b releases/v1
-   ```
+    ```bash
+    git checkout -b releases/v1
+    ```
 
-1. Replace the contents of `src/` with your action code
-1. Add tests to `__tests__/` for your source code
-1. Format, test, and build the action
+2.  Replace the contents of `src/` with your action code
 
-   ```bash
-   npm run all
-   ```
+3.  Add tests to `__tests__/` for your source code
 
-   > [!WARNING]
-   >
-   > This step is important! It will run [`ncc`](https://github.com/vercel/ncc)
-   > to build the final JavaScript action code with all dependencies included.
-   > If you do not run this step, your action will not work correctly when it is
-   > used in a workflow. This step also includes the `--license` option for
-   > `ncc`, which will create a license file for all of the production node
-   > modules used in your project.
+4.  Format, test, and build the action
 
-1. Commit your changes
+    ```bash
+    npm run all
+    ```
 
-   ```bash
-   git add .
-   git commit -m "My first action is ready!"
-   ```
+    > \[!WARNING]
+    >
+    > This step is important! It will run [`ncc`](https://github.com/vercel/ncc)
+    > to build the final JavaScript action code with all dependencies included.
+    > If you do not run this step, your action will not work correctly when it is
+    > used in a workflow. This step also includes the `--license` option for
+    > `ncc`, which will create a license file for all of the production node
+    > modules used in your project.
 
-1. Push them to your repository
+5.  Commit your changes
 
-   ```bash
-   git push -u origin releases/v1
-   ```
+    ```bash
+    git add .
+    git commit -m "My first action is ready!"
+    ```
 
-1. Create a pull request and get feedback on your action
-1. Merge the pull request into the `main` branch
+6.  Push them to your repository
+
+    ```bash
+    git push -u origin releases/v1
+    ```
+
+7.  Create a pull request and get feedback on your action
+
+8.  Merge the pull request into the `main` branch
 
 Your action is now published! :rocket:
 
@@ -217,10 +220,26 @@ steps:
 
 # Test
 
-**_Tests_**
+***Tests***
 
 ## Inputs
 
+<!-- AUTO-DOC-INPUT:START - Do not remove or modify this section -->
+
+|                                INPUT                                 |  TYPE  | REQUIRED | DEFAULT  |         DESCRIPTION         |
+|----------------------------------------------------------------------|--------|----------|----------|-----------------------------|
+| <a name="input_milliseconds"></a>[milliseconds](#input_milliseconds) | string |   true   | `"1000"` | Your input description here |
+
+<!-- AUTO-DOC-INPUT:END -->
+
 ## Outputs
+
+<!-- AUTO-DOC-OUTPUT:START - Do not remove or modify this section -->
+
+|                     OUTPUT                     |  TYPE  |         DESCRIPTION          |
+|------------------------------------------------|--------|------------------------------|
+| <a name="output_time"></a>[time](#output_time) | string | Your output description here |
+
+<!-- AUTO-DOC-OUTPUT:END -->
 
 ## Runs
