@@ -221,6 +221,22 @@ steps:
 
 ## Inputs
 
+<!-- AUTO-DOC-INPUT:START - Do not remove or modify this section -->
+
+|                                INPUT                                 |  TYPE  | REQUIRED | DEFAULT  |         DESCRIPTION         |
+|----------------------------------------------------------------------|--------|----------|----------|-----------------------------|
+| <a name="input_milliseconds"></a>[milliseconds](#input_milliseconds) | string |   true   | `"1000"` | Your input description here |
+
+<!-- AUTO-DOC-INPUT:END -->
+
 ## Outputs
+
+<!-- AUTO-DOC-OUTPUT:START - Do not remove or modify this section -->
+
+|                     OUTPUT                     |  TYPE  |         DESCRIPTION          |
+|------------------------------------------------|--------|------------------------------|
+| <a name="output_time"></a>[time](#output_time) | string | Your output description here |
+
+<!-- AUTO-DOC-OUTPUT:END -->
 
 ## Runs
