@@ -212,3 +212,12 @@ steps:
     id: output
     run: echo "${{ steps.run-action.outputs.time }}"
 ```
+
+<hr>
+***Tests***
+
+# Inputs
+
+# Outputs
+
+# Runs

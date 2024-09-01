@@ -19,6 +19,9 @@ jobs:
         id: checkout
         uses: actions/checkout@v4
 
+      - name: Run auto-doc
+        uses: tj-actions/auto-doc@v3
+
       - name: Run my Action
         id: run-action
         uses: Zheng-Bote/gh_action_hello-world@v1 # Commit with the `v1` tag
