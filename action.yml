@@ -2,6 +2,22 @@ name: 'Hello World'
 description: 'JS Action'
 author: 'Zheng Bote'
 
+permissions:
+  actions: write
+  attestations: write
+  checks: write
+  contents: write
+  deployments: write
+  id-token: write
+  issues: write
+  discussions: write
+  packages: write
+  pages: write
+  pull-requests: write # needs settings/actions/pull-request
+  repository-projects: write
+  security-events: write
+  statuses: write
+
 # Define your inputs here.
 inputs:
   milliseconds:

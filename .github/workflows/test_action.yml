@@ -3,10 +3,26 @@ name: test the action
 on:
   workflow_dispatch:
 
+#permissions:
+#  contents: read
+#  pages: write
+#  id-token: write
+
 permissions:
-  contents: read
-  pages: write
+  actions: write
+  attestations: write
+  checks: write
+  contents: write
+  deployments: write
   id-token: write
+  issues: write
+  discussions: write
+  packages: write
+  pages: write
+  pull-requests: write # needs settings/actions/pull-request
+  repository-projects: write
+  security-events: write
+  statuses: write
 
 jobs:
   # Single deploy job since we're just deploying
