@@ -1,3 +1,7 @@
+# playgound
+
+**_this is only a playgroud, will be deleted soon_**
+
 # Create a JavaScript Action
 
 [![Dependabot Updates](https://github.com/Zheng-Bote/gh_action_hello-world/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/Zheng-Bote/gh_action_hello-world/actions/workflows/dependabot/dependabot-updates)
