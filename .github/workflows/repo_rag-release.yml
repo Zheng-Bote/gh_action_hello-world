@@ -20,6 +20,7 @@ jobs:
       - name: Build
         run: echo ${{ github.sha }} > Release.txt
       - name: Test
+        id: test-release-txt
         run: cat Release.txt
       - name: Release
         uses: softprops/action-gh-release@v2
@@ -27,6 +28,6 @@ jobs:
           generate_release_notes: true
           append_body: true
           make_latest: true
+          body: 'das ist der body'
           files: |
-            Release.txt
             LICENSE
