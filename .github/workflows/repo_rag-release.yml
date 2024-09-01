@@ -13,5 +13,20 @@ jobs:
     name: Create or update major release tag
     steps:
       - uses: actions/checkout@v4
-      - name: Run release-tagger
-        uses: tj-actions/release-tagger@v4
+
+      #- name: Run release-tagger
+      #  uses: tj-actions/release-tagger@v4
+
+      - name: Build
+        run: echo ${{ github.sha }} > Release.txt
+      - name: Test
+        run: cat Release.txt
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          append_body: true
+          make_latest: true
+          files: |
+            Release.txt
+            LICENSE

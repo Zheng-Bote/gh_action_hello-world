@@ -1,4 +1,7 @@
 name: Format README.md
+# description: for GH-Actions docu
+# README.md: ## Inputs ## Outputs
+# https://github.com/tj-actions/auto-doc
 
 on:
   push:
