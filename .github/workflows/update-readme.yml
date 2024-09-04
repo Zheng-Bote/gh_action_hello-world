@@ -42,14 +42,11 @@ jobs:
           echo "README.md has uncommitted changes"
           #exit 1
 
-      - name: Create Pull Request
-        if: failure()
-        uses: peter-evans/create-pull-request@v6.1.0
+              # https://github.com/ad-m/github-push-action
+      - name: Commit & Push
+        uses: Andro999b/push@v1.3
         with:
-          base: 'main'
-          labels: 'merge when passing'
-          title: 'Updated README.md'
-          branch: 'chore/update-readme'
-          commit-message: 'Updated README.md'
-          body: 'Updated README.md'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          force: true
+          message: 'appended by Github Actions - ${date}'
