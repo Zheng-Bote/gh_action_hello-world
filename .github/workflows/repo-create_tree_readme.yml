@@ -3,6 +3,8 @@ name: Repo - Tree README.md
 # README.md: <!-- readme-tree start --><!-- readme-tree end -->
 # https://github.com/RavelloH/readme-tree
 
+run-name: create TREE strcuture in README by ${{ github.actor }}
+
 on:
   push:
     branches:
@@ -21,7 +23,7 @@ jobs:
           fetch-depth: 0
 
       - name: Tree
-        uses: RavelloH/readme-tree@v1
+        uses: RavelloH/readme-tree@v1.1.0
 
       - name: Run test
         uses: tj-actions/remark@v3
