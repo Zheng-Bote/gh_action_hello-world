@@ -226,6 +226,64 @@ steps:
 
 <!-- readme-tree start -->
 
+    .
+    ├── .devcontainer
+    │   └── devcontainer.json
+    ├── .eslintignore
+    ├── .gitattributes
+    ├── .github
+    │   ├── codeql
+    │   │   └── codeql-config.yml
+    │   ├── dependabot.yml
+    │   ├── linters
+    │   │   ├── .eslintrc.yml
+    │   │   ├── .markdown-lint.yml
+    │   │   └── .yaml-lint.yml
+    │   └── workflows
+    │       ├── changed_files.yml
+    │       ├── check-dist.yml
+    │       ├── ci.yml
+    │       ├── codeql-analysis.yml
+    │       ├── linter.yml
+    │       ├── repo-actions_docu.yml
+    │       ├── repo-create_tree_readme.yml
+    │       ├── repo_rag-release.yml
+    │       ├── sync-release-version.yml
+    │       ├── test_action.yml
+    │       └── update-readme.yml
+    ├── .gitignore
+    ├── .node-version
+    ├── .prettierignore
+    ├── .prettierrc.json
+    ├── CODEOWNERS
+    ├── LICENSE
+    ├── README.md
+    ├── __tests__
+    │   ├── index.test.js
+    │   ├── main.test.js
+    │   └── wait.test.js
+    ├── action.yml
+    ├── badges
+    │   └── coverage.svg
+    ├── dist
+    │   ├── index.js
+    │   ├── index.js.map
+    │   ├── licenses.txt
+    │   └── sourcemap-register.js
+    ├── docs
+    │   ├── index.html
+    │   ├── static.md
+    │   └── test.html
+    ├── package-lock.json
+    ├── package.json
+    ├── src
+    │   ├── index.js
+    │   ├── main.js
+    │   └── wait.js
+    └── tree.bak
+
+    10 directories, 44 files
+
 <!-- readme-tree end -->
 
 ## Inputs
