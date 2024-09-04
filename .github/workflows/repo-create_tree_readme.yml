@@ -1,0 +1,49 @@
+name: Repo - Tree README.md
+# description: for GH-Actions docu
+# README.md: <!-- readme-tree start --><!-- readme-tree end -->
+# https://github.com/RavelloH/readme-tree
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  checks: write
+  contents: write
+
+jobs:
+  sync-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Tree
+        uses: RavelloH/readme-tree@v1
+
+      - name: Run test
+        uses: tj-actions/remark@v3
+
+      - name: Verify Changed files
+        uses: tj-actions/verify-changed-files@v20
+        id: verify_changed_files
+        with:
+          files: |
+            README.md
+
+      - name: README.md changed
+        if: steps.verify_changed_files.outputs.files_changed == 'true'
+        run: |
+          echo "README.md has uncommitted changes"
+          #exit 1
+
+              # https://github.com/ad-m/github-push-action
+      - name: Commit & Push
+        uses: Andro999b/push@v1.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          force: true
+          message: 'appended by Github Actions'
