@@ -32,13 +32,15 @@ jobs:
 
       - name: Update README.md
         uses: mdvorak/update-action-readme@v1
-
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
         with:
-          title: "docs(readme): update README.md tables on ${{ github.ref_name }}"
-          commit-message: "docs(readme): updated README.md inputs/outputs tables"
-          body: "Updated README.md inputs/outputs tables, according to action.yml file"
-          branch: update-readme--${{ github.ref_name }}
-          delete-branch: true
-          labels: bot,documentation
+          file: "./README.md"
+          action-file: "./action.yml"
+
+        # https://github.com/ad-m/github-push-action
+      - name: Commit & Push
+        uses: Andro999b/push@v1.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          force: true
+          message: 'appended by Github Actions - ${date}'
