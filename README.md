@@ -221,12 +221,9 @@ steps:
 
 ## Inputs
 
-<!--(inputs-start)-->
-<!--(inputs-end)-->
 
 ## Outputs
 
-<!--(outputs-start)-->
-<!--(outputs-end)-->
+
 
 ## Runs
