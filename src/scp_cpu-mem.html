@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset=utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="theme-color" content="#8e9eab" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#000"
+    />
+    <title>Dynamic Select Statements</title>
+    <meta name="description" content="example of dynamic dropdowns" />
+    <meta name="version" content="v00.01.00" />
+    <meta name="author" content="ZHENG Robert" />
+    <meta name="date" content="2024-10-22T10:50:37+02:00" />
+
+    <style>
+      :root {
+        --background-color: lightgrey;
+        --background-color-light: #efefef;
+        --background-color-dark: grey;
+
+        --a-link-color: #0277bd;
+        --a-visited-color: #01579b;
+
+        --warning-color: red;
+        --ok-color: lightgreen;
+
+        --universal-margin: 0.5rem;
+        --universal-padding: 0.5rem;
+
+        --heading-ratio: 1.19;
+
+        --border-color: black;
+        --border-style: solid;
+        --border-width: 1px;
+        --border-radius: 5px;
+
+        --font-family: "Inter", -apple-system, BlinkMacSystemFont, Roboto,
+          Ubuntu, "Segeo UI", "Helvetica Neue", Arial, sans-serif;
+        --font-color: black;
+        --font-color-invert: white;
+        --font-size-normal: 1rem;
+        --font-size-bigger: 1.5rem;
+        --font-size-small: 0.8rem;
+        --font-size-smaller: 0.5rem;
+
+        --font-size-big-dynamic: clamp(1rem, -2.3149rem + 8.8398vw, 2rem);
+        --font-size-normal-dynamic: clamp(1rem, 1.2rem, 1.5rem);
+        --font-size-small-dynamic: clamp(0.6rem, 0.7rem, 0.8rem);
+
+        --color-decent-lightgrey: lightgrey;
+        --color-decent-8: hsla(0, 0%, 0%, 0.8);
+        --color-decent-5: hsla(0, 0%, 0%, 0.5);
+
+        /* input check/radio */
+        accent-color: grey;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-family: var(--font-family);
+        font-size: 16px;
+        color: var(--font-color);
+      }
+      body {
+        background-size: 100vw 100vh;
+        height: 100%;
+      }
+      article {
+        margin: 20px;
+      }
+      .divForm {
+        margin-top: 20px;
+        background-color: #f0f0f0;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: var(--border-radius);
+      }
+      fieldset {
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: var(--border-radius);
+
+        width: 200px;
+        margin: 50px auto;
+      }
+      legend,
+      label {
+        color: var(--color-decent-5);
+        font-size: var(--font-size-small-dynamic);
+        padding: 0 5px 0 9px;
+      }
+      legend {
+        margin-bottom: 5px;
+      }
+      label {
+        width: 100%;
+      }
+      select {
+        width: 100%;
+        /* margin: 0 5px 10px 5px;*/
+        margin-bottom: 10px;
+        padding: 10px;
+        border: none;
+        outline: none;
+        border-radius: var(--border-radius);
+      }
+    </style>
+    <link
+      rel="alternate icon"
+      href="https://www.robert.hase-zheng.net/assets/favicon.ico"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://www.robert.hase-zheng.net/assets/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      href="https://www.robert.hase-zheng.net/assets/favicon.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body id="body">
+    <article>
+      <h1>Dynamic Select Statements</h1>
+      <div class="divForm">
+        <fieldset class="fieldSet">
+          <legend>EC System Config</legend>
+          <label for="continent">CPU configuration</label>
+          <select id="continent" onchange="cpuChange(this);">
+            <option value="empty">Select CPU</option>
+            <option value="1 CPU">1 CPU</option>
+            <option value="2 CPU">2 CPU</option>
+            <option value="4 CPU">4 CPU</option>
+          </select>
+          <div>
+            <label for="memory">Memory configuration</label>
+            <select id="memory">
+              <option value="0">Select a Memory</option>
+            </select>
+          </div>
+        </fieldset>
+      </div>
+    </article>
+  </body>
+
+  <script>
+    const cpuList = new Array(4);
+    cpuList["empty"] = ["Select a CPU"];
+    cpuList["1 CPU"] = ["1 GB", "2 GB"];
+    cpuList["2 CPU"] = ["2 GB", "4 GB", "8 GB", "16 GB"];
+    cpuList["4 CPU"] = ["8 GB", "16 GB", "32 GB"];
+
+    function cpuChange(selectObj) {
+      let idx = selectObj.selectedIndex;
+      let which = selectObj.options[idx].value;
+      cList = cpuList[which];
+      let cSelect = document.getElementById("memory");
+      let len = cSelect.options.length;
+
+      while (cSelect.options.length > 0) {
+        cSelect.remove(0);
+      }
+
+      let newOption;
+      for (let i = 0; i < cList.length; i++) {
+        newOption = document.createElement("option");
+        newOption.value = cList[i];
+        newOption.text = cList[i];
+
+        try {
+          cSelect.add(newOption);
+        } catch (e) {
+          cSelect.appendChild(newOption);
+        }
+      }
+    }
+  </script>
+</html>
